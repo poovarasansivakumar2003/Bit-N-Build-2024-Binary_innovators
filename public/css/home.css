@@ -1,0 +1,428 @@
+/* Latest News */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #ccc;
+}
+
+.latest-news {
+  padding: 50px 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  background-color: #1a1a1a;
+  margin-bottom: 40px;
+  
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 40px;
+}
+
+/* Add a wrapper with max-width */
+.news-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.news-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.news-item {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 30%;
+  max-width: 300px; /* Make the article a bit smaller */
+  text-align: left;
+}
+
+.news-image img {
+  width: 100%;
+  height: 150px; /* Adjust image height for smaller article */
+  object-fit: cover; /* Maintain image aspect ratio */
+}
+
+.news-info {
+  padding: 15px;
+}
+
+.news-meta {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  color: #999;
+}
+
+.news-date,
+.news-comments {
+  margin-right: 10px;
+}
+
+.news-title {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.news-summary {
+  font-size: 0.85rem;
+  color: #bbb;
+  line-height: 1.4;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 768px) {
+  .news-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-item {
+    width: 90%;
+    height: auto; /* Allow auto height for smaller screens */
+  }
+
+  body {
+    overflow: auto; /* Allow scrolling on smaller devices */
+  }
+}
+
+/* Feedback section */
+.feedback-section {
+ 
+  margin-top: 30px;
+  font-family: "Montserrat", sans-serif; /* Updated to a professional, minimalistic font */
+  /* background-color: #1b1b1b; */
+  color: #fff;
+  width: 100%;
+  padding: 40px;
+  background-color: #1b1b1b;
+  text-align: center;
+  align-items: center;
+}
+
+.feedback-section h2 {
+  font-size: 24px;
+  font-weight: 600; /* Slightly bolder heading for a professional look */
+  margin-bottom: 10px;
+  color: #e2e2e2;
+}
+
+.feedback-section .subtitle {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #a1a1a1;
+  font-weight: 300; /* Light weight for a sleek subtitle */
+}
+
+/* Form styles */
+.feedback-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Input fields without boxes, with bottom lines */
+.feedback-form input,
+.feedback-form textarea {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #444;
+  color: #fff;
+  padding: 5px 0;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif; /* Apply the professional font to inputs */
+}
+
+/* Center the placeholder on the line */
+.feedback-form input::placeholder,
+.feedback-form textarea::placeholder {
+  color: #777;
+  text-align: center;
+  padding-top: 11px;
+  transform: translateY(6px); /* Align placeholder closer to the bottom line */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300; /* Lighter font-weight for placeholders */
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+
+/* Disable resize for textarea */
+.feedback-form textarea {
+  resize: none;
+  line-height: 1.5;
+}
+
+/* Submit button */
+.feedback-form button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+.feedback-form button:hover {
+  background-color: #666;
+}
+
+/* Responsive styles for side-by-side inputs */
+@media (min-width: 480px) {
+  .feedback-form .form-group:first-child {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .feedback-form input[type="text"],
+  .feedback-form input[type="email"] {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-section {
+    padding: 20px;
+  }
+
+  .feedback-form input,
+  .feedback-form textarea {
+    font-size: 14px;
+  }
+}
+
+/* chatbot syle */
+.chat-container {
+  z-index: 1000;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: none;
+  width: 350px;
+  height: 500px;
+  background-color: #1a1a1a; /* Slightly darker dark background for the card */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.card.show {
+  display: flex;
+  transform: translateX(0);
+}
+
+.card.hide {
+  transform: translateX(100%);
+}
+
+#header {
+  background: #ff6f00; /* A more sophisticated orange */
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#message-section {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #2a2a2a; /* Slightly lighter dark background for messages */
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  max-width: 80%;
+  line-height: 1.4;
+  position: relative;
+  display: block;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Softer shadow for messages */
+  clear: both; /* Ensure each message appears on a new line */
+  background-color: #444; /* Default background for messages */
+  color: #fff;
+}
+
+.bot {
+  background-color: #555; /* Darker gray for bot messages */
+  align-self: flex-start;
+}
+
+.user {
+  background-color: #ff6f00; /* Refined orange for user messages */
+  align-self: flex-end;
+}
+
+.message::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  z-index: 1;
+}
+
+.bot::before {
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #555 transparent transparent; /* Pointer pointing to the right */
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+}
+
+.user::before {
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #ff6f00; /* Pointer pointing to the left */
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+}
+
+#input-section {
+  display: flex;
+  padding: 0.5rem;
+  background-color: #1a1a1a; /* Match input section with card background */
+  border-top: 1px solid #444; /* Darker border */
+}
+
+#input {
+  flex: 1;
+  border: 1px solid #444; /* Darker border for input */
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  outline: none;
+  font-size: 1rem;
+  background-color: #333; /* Darker background for input */
+  color: #fff; /* White text for input */
+}
+
+.send {
+  background: #ff6f00; /* Aesthetic orange for send button */
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.send:hover {
+  background: #e65100; /* Darker orange on hover */
+}
+
+.message-icon {
+  background: #ff6f00; /* Aesthetic orange icon */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0s ease; /* Faster disappearance */
+}
+
+.message-icon.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.message-icon.show {
+  opacity: 1;
+}
+
+/* extra */
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  max-width: 80%;
+  line-height: 1.4;
+  position: relative;
+  display: block;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  clear: both;
+  color: #fff;
+}
+
+.message.user {
+  background-color: #ff6f00; /* User message color */
+  align-self: flex-end; /* Align to the right */
+}
+
+.message.bot {
+  background-color: #555; /* Bot message color */
+  align-self: flex-start; /* Align to the left */
+}
+
+/* loading response */
+.loading-icon {
+  font-size: 1.5rem; /* Adjust size as needed */
+  text-align: center;
+  margin: 1rem; /* Add some spacing */
+}
