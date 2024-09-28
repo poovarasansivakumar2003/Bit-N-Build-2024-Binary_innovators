@@ -1,0 +1,329 @@
+<!-- root/views/home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a92e2be0b6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+   
+    <!-- <-----------------------------main page & navbar------------------------>
+    <header class="header">
+
+        <div class="logo">Binary coders</div>
+        <nav class="nav">
+            <a href="#home">HOME </a> <span>/</span>
+            <a href="#about"> ABOUT </a> <span>/</span>
+            <a href="#work"> WORK </a> <span>/</span>
+            <a href="#services"> SERVICES </a> <span>/</span>
+            <a href="#jurnal"> JURNAL </a> <span>/</span>
+            <a href="#contact"> CONTACT</a> <span>/</span>
+        </nav>
+        <form action="/auth" method="GET">
+            <button type="submit" class="navsignup">Sign Up</button>
+        </form>
+
+
+
+
+    </header>
+
+    <main class="main">
+        <div class="main-content" id="maincnt">
+            <h3>INSPIRED BY PURPOSE</h3>
+            <h2>DRIVEN BY P<span class="glow">A</span>SS<span class="glow">IO</span>N <span class="glow">.</span></h2>
+            <a href="#" class="cta-button">FIND OUT MORE</a>
+        </div>
+
+
+        <div class="side-bar">
+            <input type="checkbox" role="button" aria-label="Display the menu" class="menu" id="menu-toggle">
+
+
+        </div>
+        <div id="menu-items">
+            <div class="logoat1">Binary coders</div>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT</a>
+            <a href="#">WORK</a>
+            <a href="#">SERVICES</a>
+            <a href="#">JURNAL</a>
+            <a href="#">CONTACT</a>
+
+            <!-- <button type="button" class="btnat2">Sign Up</button> -->
+
+        </div>
+    </main>
+
+
+        <!-- <-------------------------------------------ourwork------------------------------------------- -->
+
+        <section class="ourwork">
+
+
+            <!-- Section 3 -->
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <!-- Header Section -->
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-bold uppercase">Our Work</h2>
+                    <p class="mt-4 text-gray-300 uppercase section3Text">We believe our work speaks for itself. Browse
+                        our most recent
+                        projects below.</p>
+                </div>
+
+                <div class="grid md:grid-cols-5 gap-6 justify-center mb-10"></div>
+                <a href="#" class="text-lg text-center uppercase hover:text-yellow-500">Show All</a>
+                <a href="#" class="text-lg text-center uppercase hover:text-yellow-500">Illustration</a>
+                <a href="#" class="text-lg text-center uppercase hover:text-yellow-500">Motion Graphics</a>
+                <a href="#" class="text-lg text-center uppercase hover:text-yellow-500">Photography</a>
+                <a href="#" class="text-lg text-center uppercase hover:text-yellow-500">Web Design</a>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Project Cards -->
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/200" alt="Project 1" class="w-full h-60 object-cover cards">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/200" alt="Project 2" class="w-full h-60 object-cover cards">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/200" alt="Project 3" class="w-full h-60 object-cover cards">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/200" alt="Project 4" class="w-full h-60 object-cover cards">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/200" alt="Project 5" class="w-full h-60 object-cover cards">
+                </div>
+                <div class="rounded-lg overflow-hidden">
+                    <img src="https://via.placeholder.com/200" alt="Project 6" class="w-full h-60 object-cover cards">
+                </div>
+            </div>
+
+
+
+            <!-- Section 4 -->
+            <div class="w-full mx-auto px-4 py-16 text-center section4">
+                <!-- Button Section -->
+                <div class="py-6 mb-10">
+                    <button class="border px-8 py-3 text-lg uppercase font-bold hover:bg-yellow-500">Let's
+                        Work Together</button>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="py-20 m-0 bg-cover bg-center w-full"
+                    style="background-image: url('/public/images/dummybg.jpg');">
+                    <div class="flex flex-wrap justify-center items-center gap-6 text-center stats text-white">
+                        <!-- Stat Item 1 -->
+                        <div>
+                            <h3 class="text-5xl font-bold count1"></h3>
+                            <p class="mt-2 text-lg uppercase">Clients</p>
+                            <div class="w-12 h-1 bg-yellow-500 mx-auto mt-2"></div>
+                        </div>
+                        <!-- Stat Item 2 -->
+                        <div>
+                            <h3 class="text-5xl font-bold count2"></h3>
+                            <p class="mt-2 text-lg uppercase">Awards</p>
+                            <div class="w-12 h-1 bg-yellow-500 mx-auto mt-2"></div>
+                        </div>
+                        <!-- Stat Item 3 -->
+                        <div>
+                            <h3 class="text-5xl font-bold count3"></h3>
+                            <p class="mt-2 text-lg uppercase">Projects</p>
+                            <div class="w-12 h-1 bg-yellow-500 mx-auto mt-2"></div>
+                        </div>
+                        <!-- Stat Item 4 -->
+                        <div>
+                            <h3 class="text-5xl font-bold count4"></h3>
+                            <p class="mt-2 text-lg uppercase">Mails</p>
+                            <div class="w-12 h-1 bg-yellow-500 mx-auto mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+
+    
+
+    <section class="latest-news"></section>
+    <h2 class="section-title">Latest News</h2>
+    <p class="section-description">
+        We believe our blog speaks for itself. Browse our most recent posts below.
+    </p>
+    <div class="news-wrapper">
+        <div class="news-container">
+            <article class="news-item">
+                <div class="news-image">
+                    <img src="/images/pexels-bkrustev-225203.jpg" alt="Blog Post with Image">
+                </div>
+                <div class="news-info">
+                    <div class="news-meta">
+                        <span class="news-date">August 7, 2015</span>
+                        <span class="news-comments">2 comments</span>
+                    </div>
+                    <h3 class="news-title">Blog Post with Image</h3>
+                    <p class="news-summary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </article>
+
+            <article class="news-item">
+                <div class="news-image">
+                    <img src="/images/pexels-kyleroxas-2138922.jpg" alt="Blog Post with Gallery">
+                </div>
+                <div class="news-info">
+                    <div class="news-meta">
+                        <span class="news-date">August 6, 2015</span>
+                        <span class="news-comments">2 comments</span>
+                    </div>
+                    <h3 class="news-title">Blog Post with Gallery</h3>
+                    <p class="news-summary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </article>
+
+            <article class="news-item">
+                <div class="news-image">
+                    <img src="/images/pexels-therato-1933239.jpg" alt="Blog Post with Video">
+                </div>
+                <div class="news-info">
+                    <div class="news-meta">
+                        <span class="news-date">August 5, 2015</span>
+                        <span class="news-comments">1 comment</span>
+                    </div>
+                    <h3 class="news-title">Blog Post with Video</h3>
+                    <p class="news-summary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+    </section>
+   
+
+    <!-- ----------------------------------Team members------------------------------- -->
+   
+    <section class="py-16 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-3xl text-orange-500 mb-6">ABOUT TEAM</h2>
+            <p class="mb-12 max-w-2xl mx-auto">
+                A passionate team dedicated to providing exceptional services and innovative solutions to meet your
+                needs.
+                Although new to the industry, our mission is to empower our clients and help them achieve their goals
+                through
+                cutting-edge technology and creative problem-solving.
+            </p>
+            <hr>
+            <h2 class="text-3xl pt-10 text-orange-500 mb-6">ABOUT TEAM MEMBERS</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-10">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="/images/chandan.jpg" alt="Chandan"
+                        class="w-36 h-36 mx-auto rounded-full object-cover transform hover:scale-110 transition duration-300 border-4 border-transparent hover:border-orange-500">
+                    <h3 class="text-lg  mt-4">Chandan U</h3>
+                    <p class="text-sm text-gray-500">Team Leader</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="/images/darshan.png" alt="Darshan"
+                        class="w-36 h-36 mx-auto rounded-full object-cover transform hover:scale-110 transition duration-300 border-4 border-transparent hover:border-orange-500">
+                    <h3 class="text-lg  mt-4">Darshan Gowda M</h3>
+                    <p class="text-sm text-gray-500">Member</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="/images/veerendra.jpg" alt="Veerandra"
+                        class="w-36 h-36 mx-auto rounded-full object-cover transform hover:scale-110 transition duration-300 border-4 border-transparent hover:border-orange-500">
+                    <h3 class="text-lg  mt-4">Veerandra S</h3>
+                    <p class="text-sm text-gray-500">Member</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <img src="/images/poovarsan.jpg" alt="Poovarasan"
+                        class="w-36 h-36 mx-auto rounded-full object-cover transform hover:scale-110 transition duration-300 border-4 border-transparent hover:border-orange-500">
+                    <h3 class="text-lg  mt-4">Poovarasan S</h3>
+                    <p class="text-sm text-gray-500">Member</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+        <!-- <----------------------------------------------------footer-------------------------------->
+
+        <footer class="footer">
+            <div class="container">
+                <a href="#" class="Brand"> Binary coders</a>
+                <ul class="footm">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">about</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Pricing</a></li>
+                </ul>
+                <ul class="media-icons">
+                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                    <!-- <li><a href=""><i></i></a></li> -->
+                </ul>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam dolores nisi commodi, minus, incidunt
+                    dolore porro doloremque, architecto consequuntur fuga suscipit ipsa voluptatum provident vel
+                    placeat.
+                    Repellendus dolorum suscipit consequuntur in ut!</p>
+            </div>
+        </footer>
+        <script>
+            var darkMode = document.querySelector(".darkMode");
+            var lightMode = document.querySelector(".lightMode");
+
+
+            darkMode.onclick = function () {
+                document.body.style.backgroundColor = "#323232";
+                document.body.style.color = "white";
+                lightMode.style.display = "block";
+                darkMode.style.display = "none";
+            }
+
+            lightMode.onclick = function () {
+                document.body.style.backgroundColor = "#f0f4f8";
+                document.body.style.color = "#1a1a1a";
+                lightMode.style.display = "none";
+                darkMode.style.display = "block";
+            }
+        </script>
+        <script src="/js/homeScript.js"></script>
+        <script src="/js/latestNewsScript.js"></script>
+        <script src="/js/chatbotScript.js"></script>
+</body>
+
+</html>
