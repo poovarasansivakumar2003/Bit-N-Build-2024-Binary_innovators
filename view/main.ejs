@@ -1,0 +1,507 @@
+<!-- root/views/home.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/homeStyle.css">
+    <link rel="stylesheet" href="/css/ohome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Adds css icons -->
+    <script src="https://kit.fontawesome.com/a92e2be0b6.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            color: white;
+            background-color: #323232;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: none;
+            z-index: 10;
+            top: 10px;
+            left: 10px;
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .product-card:hover .tooltip {
+            display: block;
+        }
+
+        .count-display {
+            display: none;
+        }
+
+        .product-card:hover .count-display {
+            display: inline;
+        }
+    </style>
+</head>
+
+
+    <!-- <-----------------------------main page & navbar------------------------>
+    <header class="header">
+
+        <div class="logo">Binary coders</div>
+        <nav class="nav">
+            <a href="#home">HOME </a> <span>/</span>
+            <a href="#about"> PROFILE </a> <span>/</span>
+            <a href="#work"> ACESSORIES </a> <span>/</span>
+            <a href="#services">SELL/BUY </a> <span>/</span>
+            <a href="#jurnal"> FEEDBACK </a> <span>/</span>
+            <a href="#contact"> CONTACT</a> <span>/</span>
+        </nav>
+
+
+    </header>
+
+    <main class="main">
+        <div class="main-content" id="maincnt">
+            <h3>INSPIRED BY PURPOSE</h3>
+            <h2>DRIVEN BY P<span class="glow">A</span>SS<span class="glow">IO</span>N <span class="glow">.</span></h2>
+            <a href="#" class="cta-button">FIND OUT MORE</a>
+        </div>
+
+
+        <div class="side-bar">
+            <input type="checkbox" role="button" aria-label="Display the menu" class="menu" id="menu-toggle">
+
+
+        </div>
+        <div id="menu-items">
+            <div class="logoat1">Binary coders</div>
+            <a href="#">HOME</a>
+            <a href="#">PROFILE</a>
+            <a href="#">ACCESSORIES</a>
+            <a href="#">BUY/SELL</a>
+            <a href="#">FEEDBA</a>
+            <a href="#">CONTACT</a>
+
+            <!-- <button type="button" class="btnat2">Sign Up</button> -->
+
+        </div>
+    </main>
+
+
+    <section class="our work">
+        <!---ourwork---->
+
+        <section class="ourwork">
+
+
+
+            <body>
+                <div class="max-w-7xl mx-auto px-4 py-16">
+                    <!-- Header Section -->
+                    <div class="text-center mb-10">
+                        <h2 class="text-4xl font-bold uppercase">Accessories</h2>
+                        <p class="mt-4 text-gray-300 uppercase section3Text">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Mollitia saepe sint nam, amet quo omnis fugit nemo fugiat quos nesciunt sapiente eveniet minus,
+                            corrupti natus alias, quia quis voluptatibus? Voluptatum!</p>
+                    </div>
+            
+                    <div class="grid md:grid-cols-5 gap-6 justify-around items-center mb-10">
+                        <a href="#" class="text-lg text-center uppercase hover:text-yellow-500" onclick="showAll()">Show All</a>
+                        <a href="#" class="text-lg text-center uppercase hover:text-yellow-500"
+                            onclick="showCategory('clothes')">Clothes</a>
+                        <a href="#" class="text-lg text-center uppercase hover:text-yellow-500"
+                            onclick="showCategory('gadgets')">Electronics & Gadgets</a>
+                        <a href="#" class="text-lg text-center uppercase hover:text-yellow-500"
+                            onclick="showCategory('miscellaneous')">Miscellaneous</a>
+                    </div>
+            
+                    <div id="product-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Project Cards -->
+                        <div class="product-card clothes rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.QJqJzG258W1ltt8IndAqEAAAAA?rs=1&pid=ImgDetMain" alt="Project 1"
+                                class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(1)">-</button>
+                                <span id="count-1" class="count-display">0</span>
+                                <button onclick="increment(1)">+</button>
+                                <button onclick="addToCart(event, 1)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-1">0</span></div>
+                        </div>
+            
+                        <div class="product-card clothes rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.V0n77afDr1-xECpUtPtu6wHaLL?rs=1&pid=ImgDetMain" alt="Project 2"
+                                class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(2)">-</button>
+                                <span id="count-2" class="count-display">0</span>
+                                <button onclick="increment(2)">+</button>
+                                <button onclick="addToCart(event, 2)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-2">0</span></div>
+                        </div>
+            
+                        <div class="product-card clothes rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.XUuxbBx-MvH2qx2uhTdRxgAAAA?rs=1&pid=ImgDetMain" alt="Project 3"
+                                class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(3)">-</button>
+                                <span id="count-3" class="count-display">0</span>
+                                <button onclick="increment(3)">+</button>
+                                <button onclick="addToCart(event, 3)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-3">0</span></div>
+                        </div>
+            
+                        <div class="product-card gadgets rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.rQ_D2lZgTbqzo7PeAtPs-QHaHa?rs=1&pid=ImgDetMain" alt="Project 4"
+                                class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(4)">-</button>
+                                <span id="count-4" class="count-display">0</span>
+                                <button onclick="increment(4)">+</button>
+                                <button onclick="addToCart(4)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-4">0</span></div>
+                        </div>
+            
+                        <div class="product-card gadgets rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.O8sTcMBV-H2WN5hcyCR5LAHaIW?w=709&h=800&rs=1&pid=ImgDetMain"
+                                alt="Project 5" class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(5)">-</button>
+                                <span id="count-5" class="count-display">0</span>
+                                <button onclick="increment(5)">+</button>
+                                <button onclick="addToCart(5)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-5">0</span></div>
+                        </div>
+            
+                        <div class="product-card gadgets rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.b7mayBEtFKH9aTHPCUInkgHaHa?rs=1&pid=ImgDetMain" alt="Project 6"
+                                class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(6)">-</button>
+                                <span id="count-6" class="count-display">0</span>
+                                <button onclick="increment(6)">+</button>
+                                <button onclick="addToCart(6)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-6">0</span></div>
+                        </div>
+            
+                        <div class="product-card miscellaneous rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.bFZADjbnx-mkVm142G4SKwAAAA?rs=1&pid=ImgDetMain" alt="Project 7"
+                                class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(7)">-</button>
+                                <span id="count-7" class="count-display">0</span>
+                                <button onclick="increment(7)">+</button>
+                                <button onclick="addToCart(7)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-7">0</span></div>
+                        </div>
+            
+                        <div class="product-card miscellaneous rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.5Qy-WywWXXfGUAW9JqkUmAHaD4?w=600&h=315&rs=1&pid=ImgDetMain"
+                                alt="Project 8" class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(8)">-</button>
+                                <span id="count-8" class="count-display">0</span>
+                                <button onclick="increment(8)">+</button>
+                                <button onclick="addToCart(8)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-8">0</span></div>
+                        </div>
+            
+                        <div class="product-card miscellaneous rounded-lg overflow-hidden">
+                            <img src="https://th.bing.com/th/id/OIP.1TAcl7F5VB46U_y79e6X_QHaHa?rs=1&pid=ImgDetMain" alt="Project 9"
+                                class="w-full h-60 object-cover cards">
+                            <div class="flex justify-between items-center p-2">
+                                <button onclick="decrement(9)">-</button>
+                                <span id="count-9" class="count-display">0</span>
+                                <button onclick="increment(9)">+</button>
+                                <button onclick="addToCart(9)">Add to Collection</button>
+                            </div>
+                            <div class="tooltip">Items in Collection: <span id="tooltip-count-9">0</span></div>
+                        </div>
+                    </div>
+             
+                    <script>
+                        let cart = {};
+            
+                        function increment(id) {
+                            let count = document.getElementById("count-" + id);
+                            let tooltipCount = document.getElementById("tooltip-count-" + id);
+                            let currentValue = parseInt(count.textContent);
+                            count.textContent = currentValue + 1;
+                            cart[id] = (cart[id] || 0) + 1;
+                            tooltipCount.textContent = cart[id]; // Update tooltip count
+                        }
+            
+                        function decrement(id) {
+                            let count = document.getElementById("count-" + id);
+                            let tooltipCount = document.getElementById("tooltip-count-" + id);
+                            let currentValue = parseInt(count.textContent);
+                            if (currentValue > 0) {
+                                count.textContent = currentValue - 1;
+                                cart[id] = Math.max((cart[id] || 0) - 1, 0); // Prevent negative cart values
+                                tooltipCount.textContent = cart[id]; // Update tooltip count only if greater than 0
+                            }
+                        }
+            
+                        function addToCart(event, id) {
+                            event.preventDefault(); // Prevent the page from refreshing
+                            alert(`Added ${cart[id] || 0} items from project ${id} to the cart`);
+                            cart[id] = 0; // Reset count in the cart
+                            document.getElementById("count-" + id).textContent = 0; // Reset the count display
+                            document.getElementById("tooltip-count-" + id).textContent = 0; // Reset the tooltip count as well
+                        }
+            
+                        function showAll() {
+                            const cards = document.querySelectorAll('.product-card');
+                            cards.forEach(card => {
+                                card.style.display = 'block'; // Show all cards
+                            });
+                        }
+            
+                        function showCategory(category) {
+                            const cards = document.querySelectorAll('.product-card');
+                            cards.forEach(card => {
+                                if (card.classList.contains(category)) {
+                                    card.style.display = 'block'; // Show category cards
+                                } else {
+                                    card.style.display = 'none'; // Hide other cards
+                                }
+                            });
+                        }
+            
+                    </script>
+                
+
+
+    
+
+          
+
+
+
+
+
+    </section>
+
+    <section class="latest-news"></section>
+    <h2 class="section-title">Latest News</h2>
+    <p class="section-description">
+        We believe our blog speaks for itself. Browse our most recent posts below.
+    </p>
+    <div class="news-wrapper">
+        <div class="news-container">
+            <article class="news-item">
+                <div class="news-image">
+                    <img src="/images/pexels-bkrustev-225203.jpg" alt="Blog Post with Image">
+                </div>
+                <div class="news-info">
+                    <div class="news-meta">
+                        <span class="news-date">August 7, 2015</span>
+                        <span class="news-comments">2 comments</span>
+                    </div>
+                    <h3 class="news-title">Blog Post with Image</h3>
+                    <p class="news-summary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </article>
+
+            <article class="news-item">
+                <div class="news-image">
+                    <img src="/images/pexels-kyleroxas-2138922.jpg" alt="Blog Post with Gallery">
+                </div>
+                <div class="news-info">
+                    <div class="news-meta">
+                        <span class="news-date">August 6, 2015</span>
+                        <span class="news-comments">2 comments</span>
+                    </div>
+                    <h3 class="news-title">Blog Post with Gallery</h3>
+                    <p class="news-summary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </article>
+
+            <article class="news-item">
+                <div class="news-image">
+                    <img src="/images/pexels-therato-1933239.jpg" alt="Blog Post with Video">
+                </div>
+                <div class="news-info">
+                    <div class="news-meta">
+                        <span class="news-date">August 5, 2015</span>
+                        <span class="news-comments">1 comment</span>
+                    </div>
+                    <h3 class="news-title">Blog Post with Video</h3>
+                    <p class="news-summary">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+    </section>
+    <!-- feedback section -->
+    <section class="feedback-section">
+        <div class="container">
+            <h2>SEND US MESSAGE</h2>
+            <p class="subtitle">Let us work with you to create an online strategy that works.</p>
+            <form class="feedback-form" action="/send-email" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name *" required>
+                    <input type="email" name="email" placeholder="Email *" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Tell us everything" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- chatbot -->
+    <div class="chat-container">
+        <div class="card" id="chatCard">
+            <div id="header">
+                <h1>Chatter Box</h1>
+                <button class="close-btn" onclick="toggleChat()">×</button>
+            </div>
+            <div id="message-section">
+                <div class="message bot"><span class="message-text">Hello! How can I help you?</span></div>
+            </div>
+            <div id="loading" class="loading-icon" style="display: none;">⏳</div>
+            <div id="input-section">
+                <input id="input" type="text" placeholder="Type a message" autocomplete="off">
+                <button class="send" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <button class="message-icon" onclick="toggleChat()">💬</button>
+    </div>
+    <!-- <----------------------------------Team members------------------------------- -->
+    
+    <section class="py-16 text-center">
+        <div class="container mx-auto">
+            <h2 class="text-3xl text-orange-500 mb-6">ABOUT TEAM</h2>
+            <p class="mb-12 max-w-2xl mx-auto">
+                A passionate team dedicated to providing exceptional services and innovative solutions to meet your
+                needs.
+                Although new to the industry, our mission is to empower our clients and help them achieve their goals
+                through
+                cutting-edge technology and creative problem-solving.
+            </p>
+            <hr>
+            <h2 class="text-3xl pt-10 text-orange-500 mb-6">ABOUT TEAM MEMBERS</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-10">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <img src="/images/chandan.jpg" alt="Chandan"
+                        class="w-36 h-36 mx-auto rounded-full object-cover transform hover:scale-110 transition duration-300 border-4 border-transparent hover:border-orange-500">
+                    <h3 class="text-lg  mt-4">Chandan U</h3>
+                    <p class="text-sm text-gray-500">Team Leader</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <img src="/images/darshan.png" alt="Darshan"
+                        class="w-36 h-36 mx-auto rounded-full object-cover transform hover:scale-110 transition duration-300 border-4 border-transparent hover:border-orange-500">
+                    <h3 class="text-lg  mt-4">Darshan Gowda M</h3>
+                    <p class="text-sm text-gray-500">Member</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <img src="/images/veerendra.jpg" alt="Veerandra"
+                        class="w-36 h-36 mx-auto rounded-full object-cover transform hover:scale-110 transition duration-300 border-4 border-transparent hover:border-orange-500">
+                    <h3 class="text-lg  mt-4">Veerandra S</h3>
+                    <p class="text-sm text-gray-500">Member</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <img src="/images/poovarsan.jpg" alt="Poovarasan"
+                        class="w-36 h-36 mx-auto rounded-full object-cover transform hover:scale-110 transition duration-300 border-4 border-transparent hover:border-orange-500">
+                    <h3 class="text-lg  mt-4">Poovarasan S</h3>
+                    <p class="text-sm text-gray-500">Member</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <----------------------------------map------------------------------- -->
+    <section>
+
+        <div class="map">
+            <hr>
+            <h1>Location</h1>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10749.381974317792!2d77.5903259520513!3d12.972989944482016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1672fcfc6af1%3A0x9c2dc517c9231979!2sUVCE!5e0!3m2!1sen!2sin!4v1726765627401!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+        <!-- <----------------------------------------------------footer-------------------------------->
+
+        <footer class="footer">
+            <div class="container">
+                <a href="#" class="Brand"> Binary coders</a>
+                <ul class="footm">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">about</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Pricing</a></li>
+                </ul>
+                <ul class="media-icons">
+                    <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                    <!-- <li><a href=""><i></i></a></li> -->
+                </ul>
+                <p> University of Visvesvarya college of Engineering <br> K R Circle , Bangalore 560001 <br> Contact
+                    no.: 1234567891</p>
+            </div>
+        </footer>
+        <script>
+            var darkMode = document.querySelector(".darkMode");
+            var lightMode = document.querySelector(".lightMode");
+
+
+            darkMode.onclick = function () {
+                document.body.style.backgroundColor = "#323232";
+                document.body.style.color = "white";
+                lightMode.style.display = "block";
+                darkMode.style.display = "none";
+            }
+
+            lightMode.onclick = function () {
+                document.body.style.backgroundColor = "#f0f4f8";
+                document.body.style.color = "#1a1a1a";
+                lightMode.style.display = "none";
+                darkMode.style.display = "block";
+            }
+        </script>
+        <script src="/js/homeScript.js"></script>
+        <script src="/js/latestNewsScript.js"></script>
+        <script src="/js/chatbotScript.js"></script>
+</body>
+
+</html>
