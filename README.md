@@ -6,11 +6,22 @@
 - **Poovarasan S.**
 - **Veerendra S.**
 
-## Project Overview
-
+## Overview
 This project was developed during the **Bit and Build Hackathon**.
+This project is a solution to help individuals like Ravi, who struggle with managing their belongings in an organized manner. The application allows users to catalog their clothes, accessories, and personal items, making it easier to track what they own and make more sustainable choices.
 
+## Problem Statement
 
+Meet Ravi, a young professional living in a bustling city. Over the years, he has accumulated a sizable collection of clothes and accessories. However, his growing wardrobe has become difficult to manage. Ravi often buys new items without realizing he already owns something similar, leading to clutter and waste. This project aims to provide a better way for Ravi to organize, manage, and make the most of his belongings.
+
+## Features
+
+- User-friendly interface for adding, editing, and deleting items from the wardrobe.
+- Ability to categorize items (e.g., everyday wear, special occasion outfits).
+- Search functionality to quickly find items.
+- Recommendations for sustainable choices based on user preferences.
+- Visual representation of items for better management.
+  
 ## Tech Stack:
 - **Frontend**: Technologies used for frontend are  EJS, CSS, JavaScript, Tailwind CSS, etc.
 - **Backend**: Backend technologies are Node.js, Express, etc.
