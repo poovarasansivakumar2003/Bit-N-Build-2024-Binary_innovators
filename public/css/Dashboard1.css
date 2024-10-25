@@ -1,0 +1,64 @@
+/* General Styles */
+body {
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+.form {
+  width: 50%; /* Center the form with appropriate width */
+  background-color: #424242; /* Optional: Background for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  margin: auto; /* To make sure it's centered horizontally */
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 681px) {
+  /* For screens wider than 681px */
+  .form {
+    width: 50%; /* Ensures a fixed size for the form on larger screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .media {
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centers all text and content */
+    width: 100%;
+  }
+
+  .updateSkipContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 681px) {
+  .form {
+    width: 90%; /* Take more space on smaller screens */
+  }
+}
+
+.updateSkipContainer {
+  display: flex;
+  justify-content: center;
+}
+
+

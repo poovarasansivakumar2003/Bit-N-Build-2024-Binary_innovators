@@ -1,0 +1,718 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background-color: #323232;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+#work,
+#latestnews,
+#contact,
+#services,
+.cards,
+.map,
+#about {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.modal{
+  display: none;
+}
+
+.sidebar {
+  display: none;
+}
+
+#responsive {
+  display: none;
+  flex-direction: column;
+  z-index: 99;
+  margin-top: 80px;
+  padding: 50px;
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1115px) {
+  .sidebar {
+    display: block;
+  }
+
+  .navList {
+    display: none;
+  }
+}
+
+
+.main {
+  height: 100vh;
+  background-image: url("../images/mainbg.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Increased opacity for better contrast */
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+.main h3 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for better contrast */
+}
+
+.main h2 {
+  font-size: 72px;
+  margin-top: 0;
+  position: relative;
+  letter-spacing: 15px;
+  color: #ffa500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for better contrast */
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ffa500; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ff8c00; /* Darker shade on hover */
+}
+
+/* <-----------------------------glow part------------------------------> */
+
+.glow {
+  margin-top: 0;
+  position: relative;
+  letter-spacing: 15px;
+  color: #ffa500;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+  /* Fixed transparency */
+  line-height: 1em;
+  /* Adjusted to prevent overlapping */
+  outline: none;
+  animation: animate 1ms linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #ffa500;
+    text-shadow: none;
+  }
+
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500,
+      0 0 80px #ffa500, 0 0 160px #ffa500;
+  }
+}
+
+.glow:nth-child(1) {
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+.glow:nth-child(2) {
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+}
+
+.glow:nth-child(3) {
+  animation-delay: 8s;
+  animation-iteration-count: infinite;
+}
+
+/* Restart the blinking sequence after all words have blinked */
+@keyframes restart {
+  0%,
+  10%,
+  30%,
+  100% {
+    color: #ffa500;
+    text-shadow: none;
+  }
+
+  20%,
+  40% {
+    color: #fff;
+    text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500,
+      0 0 80px #ffa500, 0 0 160px #ffa500;
+  }
+
+  50%,
+  70% {
+    color: #ffa500;
+    text-shadow: none;
+  }
+
+  60%,
+  80% {
+    color: #fff;
+    text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500,
+      0 0 80px #ffa500, 0 0 160px #ffa500;
+  }
+}
+
+.glow {
+  animation: restart 8s linear infinite;
+}
+
+.main-content span {
+  color: #ffa500;
+}
+
+/* <----------------------main page btn--------------------------> */
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.cta-button:hover {
+  color: orange;
+}
+
+@media screen and (max-width: 1260px) {
+  .main h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .main h2 {
+    font-size: 40px;
+    margin-top: 0;
+    position: relative;
+    letter-spacing: 15px;
+    color: #ffa500;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .main h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .main h2 {
+    font-size: 30px;
+    margin-top: 0;
+    position: relative;
+    letter-spacing: 13px;
+    color: #ffa500;
+  }
+}
+
+.darkComplex {
+  background-color: #1a1a1a;
+}
+
+.cards {
+  transition: 1s ease;
+}
+
+.cards:hover {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  transition: 1s ease;
+}
+
+@media screen and (max-width: 474px) {
+  .stats {
+    flex-direction: column;
+  }
+}
+
+.latest-news {
+  padding: 50px 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 40px;
+}
+
+/* Add a wrapper with max-width */
+.news-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.news-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.news-item {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 30%;
+  max-width: 300px;
+  /* Make the article a bit smaller */
+  text-align: left;
+}
+
+.news-image img {
+  width: 100%;
+  height: 150px;
+  /* Adjust image height for smaller article */
+  object-fit: cover;
+  /* Maintain image aspect ratio */
+}
+
+.news-info {
+  padding: 15px;
+}
+
+.news-meta {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  color: #999;
+}
+
+.news-date,
+.news-comments {
+  margin-right: 10px;
+}
+
+.news-title {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.news-summary {
+  font-size: 0.85rem;
+  color: #bbb;
+  line-height: 1.4;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 768px) {
+  .news-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .news-item {
+    width: 90%;
+    height: auto;
+  }
+
+  body {
+    overflow: auto;
+  }
+}
+
+.map hr {
+  padding-bottom: 20px;
+}
+
+.map h1 {
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  padding-bottom: 40px;
+  text-transform: uppercase;
+  color: orange;
+}
+
+.map {
+  margin-top: 40px;
+  background-color: #2a2a2a0d;
+  justify-content: center;
+}
+
+.mpa h1 {
+  color: #fff;
+  background: #121315;
+}
+
+.map iframe {
+  width: 100%;
+  height: 20rem;
+}
+
+/* <-----------------------------footer------------------------> */
+
+footer * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.Brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer .footm li {
+  display: inline-block;
+  margin: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.footer p {
+  color: #ccc;
+  max-width: 25rem;
+  font-size: 0.9rem;
+  line-height: 23px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.media-icons li {
+  display: inline-block;
+  list-style: none;
+  margin: 1.5rem 0 1.5rem 1.5rem;
+}
+
+.media-icons a {
+  font-size: 1.1em;
+  width: 2em;
+  height: 2em;
+  border: 1px #fff solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+/* chatbot syle */
+.chat-container {
+  z-index: 1000;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: none;
+  width: 350px;
+  height: 500px;
+  background-color: #1a1a1a;
+  /* Slightly darker dark background for the card */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  /* Darker shadow for depth */
+  border-radius: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.card.show {
+  display: flex;
+  transform: translateX(0);
+}
+
+.card.hide {
+  transform: translateX(100%);
+}
+
+#header {
+  background: #ff6f00;
+  /* A more sophisticated orange */
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#message-section {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+
+  /* Slightly lighter dark background for messages */
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  max-width: 80%;
+  line-height: 1.4;
+  position: relative;
+  display: block;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  /* Softer shadow for messages */
+  clear: both;
+  /* Ensure each message appears on a new line */
+  background-color: #444;
+  /* Default background for messages */
+  color: #fff;
+}
+
+.bot {
+  background-color: #555;
+  /* Darker gray for bot messages */
+  align-self: flex-start;
+}
+
+.user {
+  background-color: #ff6f00;
+  /* Refined orange for user messages */
+  align-self: flex-end;
+}
+
+.message::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  z-index: 1;
+}
+
+.bot::before {
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #555 transparent transparent;
+  /* Pointer pointing to the right */
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+}
+
+.user::before {
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #ff6f00;
+  /* Pointer pointing to the left */
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+}
+
+#input-section {
+  display: flex;
+  padding: 0.5rem;
+  background-color: #1a1a1a;
+  /* Match input section with card background */
+  border-top: 1px solid #444;
+  /* Darker border */
+}
+
+#input {
+  flex: 1;
+  border: 1px solid #444;
+  /* Darker border for input */
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  outline: none;
+  font-size: 1rem;
+  background-color: #333;
+  /* Darker background for input */
+  color: #fff;
+  /* White text for input */
+}
+
+.send {
+  background: #ff6f00;
+  /* Aesthetic orange for send button */
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.send:hover {
+  background: #e65100;
+  /* Darker orange on hover */
+}
+
+.message-icon {
+  background: #ff6f00;
+  /* Aesthetic orange icon */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0s ease;
+  /* Faster disappearance */
+}
+
+.message-icon.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.message-icon.show {
+  opacity: 1;
+}
+
+/* extra */
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  max-width: 80%;
+  line-height: 1.4;
+  position: relative;
+  display: block;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  clear: both;
+  color: #fff;
+}
+
+.message.user {
+  background-color: #ff6f00;
+  /* User message color */
+  align-self: flex-end;
+  /* Align to the right */
+}
+
+.message.bot {
+  background-color: #555;
+  /* Bot message color */
+  align-self: flex-start;
+  /* Align to the left */
+}
+
+/* loading response */
+.loading-icon {
+  font-size: 1.5rem;
+  /* Adjust size as needed */
+  text-align: center;
+  margin: 1rem;
+  /* Add some spacing */
+}
