@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycle Exchange Feed</title>
+    <link rel="stylesheet" href="/css/Scrollstyles.css">
+</head>
+
+<body>
+    <div class="feed-container">
+        <div class="post">
+            <div class="post-header">
+                <img src="/images/av1.jpg" alt="Profile" class="profile-img">
+                <h3>John Doe</h3>
+            </div>
+            <div class="post-content">
+                <p>I had my used jeans pant... Anybody interested?</p>
+                <img src="/images/c2.jpg" alt="Post Image" class="post-img">
+            </div>
+            <div class="post-footer">
+                <button class="like-btn" onclick="increaseLikes(this)">Like <span class="like-count">0</span></button>
+                <button class="comment-btn" onclick="showCommentInput(this)">Comment <span
+                        class="comment-count">0</span></button>
+                <button class="interested-btn" onclick="showInterested(this)">Interested</button>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post-header">
+                <img src="/images/av2.avif" alt="Profile" class="profile-img">
+                <h3>Jane Smith</h3>
+            </div>
+            <div class="post-content">
+                <p>I had my used Keyboard... Anybody want!</p>
+                <img src="/images/keyb.jpg" alt="Post Image" class="post-img">
+            </div>
+            <div class="post-footer">
+                <button class="like-btn" onclick="increaseLikes(this)">Like <span class="like-count">0</span></button>
+                <button class="comment-btn" onclick="showCommentInput(this)">Comment <span
+                        class="comment-count">0</span></button>
+                <button class="interested-btn" onclick="showInterested(this)">Interested</button>
+            </div>
+        </div>
+
+        <!-- Add more posts here -->
+        <div class="post">
+            <div class="post-header">
+                <img src="/images/av3.avif" alt="Profile" class="profile-img">
+                <h3>Mike Johnson</h3>
+            </div>
+            <div class="post-content">
+                <p>I had my old headphone anyone wants??!</p>
+                <img src="/images/headphone.jpg" alt="Post Image" class="post-img">
+            </div>
+            <div class="post-footer">
+                <button class="like-btn" onclick="increaseLikes(this)">Like <span class="like-count">0</span></button>
+                <button class="comment-btn" onclick="showCommentInput(this)">Comment <span
+                        class="comment-count">0</span></button>
+                <button class="interested-btn" onclick="showInterested(this)">Interested</button>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post-header">
+                <img src="/images/av4.avif" alt="Profile" class="profile-img">
+                <h3>Sarah Lee</h3>
+            </div>
+            <div class="post-content">
+                <p>Recycled art pieces available. DM for details!</p>
+                <img src="/images/cup.png" alt="Post Image" class="post-img">
+            </div>
+            <div class="post-footer">
+                <button class="like-btn" onclick="increaseLikes(this)">Like <span class="like-count">0</span></button>
+                <button class="comment-btn" onclick="showCommentInput(this)">Comment <span
+                        class="comment-count">0</span></button>
+                <button class="interested-btn" onclick="showInterested(this)">Interested</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="camera-upload-container">
+        <button id="cameraUploadBtn" onclick="openCamera()">📷 Upload Photo</button>
+        <input type="file" id="cameraInput" accept="image/*" capture="camera" style="display: none;">
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
